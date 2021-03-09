@@ -7,20 +7,24 @@ import {
   Stack,
 } from 'react-native-router-flux';
 
-import Intro from '../screens/Intro';
+import Splash from '../screens/Splash';
+import Main from '../screens/Main';
 import Login from '../screens/Login';
+import Signup from '../screens/Signup';
 
 const RouterComponent = () => {
   return (
     <Router>
       <Stack key="root">
-        <Scene
+        {/* <Scene
           key="intro"
           hideNavBar
           component={Intro}
           gesturesEnabled={false}
           panHandlers={null}
-        />
+        /> */}
+        <Scene key="splash" hideNavBar component={Splash} />
+        <Scene key="signup" hideNavBar component={Signup} />
         <Scene
           key="login"
           hideNavBar
@@ -28,10 +32,7 @@ const RouterComponent = () => {
           gesturesEnabled={false}
           panHandlers={null}
         />
-
-        {/*
-        <Scene key="signup" hideNavBar component={Signup} />
-				*/}
+        <Scene key="main" hideNavBar component={Main} />
       </Stack>
     </Router>
   );
